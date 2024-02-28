@@ -1,0 +1,16 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. HELLO.
+       
+       DATA DIVISION.
+          WORKING-STORAGE SECTION.
+          01 WS-CNT1 PIC 9(2) VALUE 0.
+          01 WS-CNT2 PIC 9(2) VALUE 0.
+          01 WS-STRING PIC X(19) VALUE 'ABACDADEAAAFF'.
+          01 LEN pic 9(3).
+          
+       PROCEDURE DIVISION.
+           DISPLAY LEN.
+           COMPUTE LEN = FUNCTION LENGTH(FUNCTION TRIM(WS-STRING TRAILING))
+           DISPLAY LEN.
+          
+       STOP RUN.
